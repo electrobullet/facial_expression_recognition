@@ -1,13 +1,10 @@
-from dnn.opencv.EfficientFER import EfficientFER
-from dnn.opencv.FaceDetectionRetail0044 import FaceDetectionRetail0044
+from dnn.openvino.EfficientFER import EfficientFER
+from dnn.openvino.FaceDetectionRetail0044 import FaceDetectionRetail0044
 
-face_detector = FaceDetectionRetail0044(
-    'models/face-detection-retail-0044.caffemodel',
-    'models/face-detection-retail-0044.prototxt',
-)
+face_detector = FaceDetectionRetail0044('models/face-detection-retail-0044.xml')
 
 emotion_recognizer = EfficientFER(
-    'models/EfficientFER5_96x96.onnx',
+    'models/EfficientFER5_96x96.xml',
     (96, 96),
     emotions=[
         'anger',
